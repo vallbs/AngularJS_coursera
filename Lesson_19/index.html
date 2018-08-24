@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./node_modules/angular/angular.min.js"></script>
+    <script src="app.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="AddItemController2 as addItem2">
+        <input type="text" ng-model="addItem2.itemName" placeholder="itemName" />
+        <input type="text" ng-model="addItem2.itemQuantity" placeholder="itemQuantity" />
+        <button ng-click="addItem2.addItem()">add</button>
+
+        <div>
+            <ul>
+                <li ng-repeat="item in addItem2.items">
+                    <span>{{item.itemQuantity}} {{item.itemName}}(s)</span>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h4>{{ addItem2.errorMessage }}</h4>
+        </div>
+    </div>
+
+</body>
+
+</html>
